@@ -10,7 +10,7 @@ Measured on 4 October 2026 in one private work archive that follows [posts](http
 - **Superseded posts:** in 19 of the 29 sessions where a relevant post had a newer replacement, the agent read an old version without the new one. Visible harm: once.
 - **Linking:** new posts linked or named 78% of the earlier posts a reader would need.
 - **Breadth:** a median session drew on 3 kinds of source, 2 of them outside the archive. 73% of sessions went outside it.
-- **Session size:** cost per session at list prices has a median of $2.69 and a mean of $17.16. Most sessions are short; the top tenth, at over $41 each, carry 65% of the cost.
+- **Session size:** a median session has 5 user messages, 51 model turns and 65 tool calls, runs 30 minutes and costs $2.69 at list prices. The means are far higher (9 messages, 176 turns, 207 tool calls, $17.16): a long tail of big sessions does most of the work, and the top tenth carry 65% of the cost.
 - **Scale:** 193 sessions, plus 165 subagent sessions, and 816 commits in 21 days.
 
 Faithful use, effort, help, superseded posts and linking come from a judged sample of 40 sessions and 20 posts. Breadth, session size and scale count every session. Details and method follow.
@@ -25,7 +25,7 @@ Faithful use, effort, help, superseded posts and linking come from a judged samp
 ## The sessions
 
 - 193 sessions started in the archive on 19 of the 21 days, across three computers (plus one session on a fourth). They started 165 subagent sessions.
-- A median session has 5 user messages and runs 30 minutes.
+- Per session, with its subagents included: median 5 user messages, 51 model turns, 65 tool calls and 30 minutes; mean 9 messages, 176 turns and 207 tool calls. The top tenth run past 470 turns and 525 tool calls. Mean duration means little, because some sessions stay open for days.
 - Cost per session at list prices, with its subagents included: median $2.69, mean $17.16. The top tenth of sessions carry 65% of the cost. Most tokens are cached input: 5.2 billion cache-read tokens against 27 million output tokens. Sessions used 17 different models.
 
 ## How agents use earlier posts
