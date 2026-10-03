@@ -9,7 +9,7 @@ Measured on 4 October 2026 in one private work archive that follows [posts](http
 | Faithful use | 22 of the 24 sessions that could be judged used what they read faithfully; one slipped slightly and one contradicted its source | sample |
 | Effort | 23 of 30 sessions reached a relevant post within 5 tool calls of their first archive search; 10 went straight to one | sample |
 | Without help | with no pointer from the user, agents found 82% of the needed posts; the user pointed the way in 19 of 40 sessions | sample |
-| Superseded posts | in 19 of the 29 sessions where a relevant post had a newer replacement, the agent read an old version without the new one; visible harm once | sample |
+| Superseded posts | in 19 of the 29 sessions where a relevant post had a newer replacement, the agent read an old version without the new one; visible harm once. Only 13% of earlier posts link their replacement | sample |
 | Linking | new posts linked or named 78% of the earlier posts a reader would need | sample |
 | Breadth | a median session drew on 3 kinds of source, 2 of them outside the archive; 73% of sessions went outside it | all sessions |
 | Session size | median 5 user messages, 51 model turns, 65 tool calls, 30 minutes and $2.69 at list prices | all sessions |
@@ -29,6 +29,15 @@ The sample is 40 sessions and 20 posts, judged by a model. Details and method fo
 - A typical post has 8 files: the README plus evidence and working.
 - 86% of the posts written in the period link to at least one other post, and 84% are linked from one.
 
+| Content | Files | Tokens |
+|---|--:|--:|
+| Authored Markdown (post READMEs alone: 0.6M tokens) | 982 | 3.3M |
+| Know-how scripts: Python, SQL, JavaScript, shell, PowerShell | 2,492 | 4.0M |
+| Domain documents, text only: PDF, Word, email, PowerPoint | 640 | 4.3M |
+| The folder listing: 235 post names | | 3.2k |
+
+Tokens are counted with the o200k tokenizer, excluding posts begun on 4 October. Data files (CSV, TXT, spreadsheets, parquet) and images are left out; with them, the repository holds 18.6k files and 6.6 GB. About 11M tokens is small for retrieval over documents but far too much to read whole. Agents choose among 235 named posts, with the folder listing as a table of contents, then read inside them.
+
 ## The sessions
 
 193 sessions started in the archive on 19 of the 21 days, across three computers (plus one session on a fourth). They started 165 subagent sessions.
@@ -39,7 +48,7 @@ The sample is 40 sessions and 20 posts, judged by a model. Details and method fo
 
 | Per session, subagents included | Median | Mean | Top tenth |
 |---|---|---|---|
-| User messages | 5 | 9 | |
+| User messages (main session only) | 5 | 9 | |
 | Model turns | 51 | 176 | 470 or more |
 | Tool calls | 65 | 207 | 525 or more |
 | Duration | 30 minutes | means little: some sessions stay open for days | |
@@ -83,7 +92,7 @@ Most tokens are cached input: 5.2 billion cache-read tokens against 27 million o
 
 *Sessions reaching their first relevant post, by tool calls after their first archive search (0: opened one before searching).*
 
-Superseded posts are where deferred curation is weakest. Old posts don't link forward, so only a search finds the newer one.
+Superseded posts are the weak spot, and the guide already covers them. Readers should look for later posts that change a post, and writers should link the new post from the changed post's README. Agents mostly did neither: only 16 of 122 earlier posts (13%) link their replacement.
 
 ## Where answers come from
 
@@ -121,6 +130,8 @@ Superseded posts are where deferred curation is weakest. Old posts don't link fo
 | Keep the README short | Median 890 words, over 1,800 for the top tenth. Posts begun since the guide's latest revision: median about 500 |
 | Link within an archive by relative path | 92% of links between posts |
 | After the task, record changes as new posts | 3% of posts were edited a week or more after they were started, though the period is only three weeks |
+| Link the new post from the changed post's README | Earlier posts link their replacement in 16 of 122 judged pairs (13%) |
+| Read each post against its date and look for later posts that change it | In 19 of 29 sampled sessions with a superseded post, the agent read the old post without the new one |
 
 ## Method
 
