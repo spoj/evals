@@ -6,19 +6,19 @@ On 3–4 October 2026, gpt-6.1-sol at max thinking did two real reconciliations 
 
 **Both arms matched a 136-line bank rec perfectly, and both failed the same judgment call in every run. On 16,933 intercompany items, at most 2% of the rows either arm grouped belonged on the expert's list, and 83–87% of the rows the arms left for the expert really needed one. Recon cost more: about 40% more tokens on the bank rec, and nearly twice the median time on the intercompany match, where two of its five runs hit the 4-hour cap.**
 
-| | flat | recon | recon, code only |
-|---|--:|--:|--:|
-| ***Bank rec, 136 lines*** | | | |
-| Matching right on all three accounts | 5 of 5 | 5 of 5 | pending |
-| Journal entries right | 0 of 5 | 0 of 5 | pending |
-| Median minutes, cost, tokens | 11.5, $0.32, 223k | 12.3, $0.37, 316k | pending |
-| ***Intercompany, 16,933 items; mean of 5 runs*** | | | |
-| Grouped rows that belong on the expert's list | 1.6% | 0.4% | pending |
-| Matchable rows left on the expert's list | 0.9% | 2.8% | pending |
-| Rows on the list that really need the expert | 86.6% | 83.0% | pending |
-| Grouped rows in a defensible group | 96.7% | 98.6% | pending |
-| Median minutes, cost | 70, $2.84 | 134, $3.99 | pending |
-| Runs stopped by the 4-hour cap | 0 of 5 | 2 of 5 | pending |
+| | flat | recon |
+|---|--:|--:|
+| ***Bank rec, 136 lines*** | | |
+| Matching right on all three accounts | 5 of 5 | 5 of 5 |
+| Journal entries right | 0 of 5 | 0 of 5 |
+| Median minutes, cost, tokens | 11.5, $0.32, 223k | 12.3, $0.37, 316k |
+| ***Intercompany, 16,933 items; mean of 5 runs*** | | |
+| Grouped rows that belong on the expert's list | 1.6% | 0.4% |
+| Matchable rows left on the expert's list | 0.9% | 2.8% |
+| Rows on the list that really need the expert | 86.6% | 83.0% |
+| Grouped rows in a defensible group | 96.7% | 98.6% |
+| Median minutes, cost | 70, $2.84 | 134, $3.99 |
+| Runs stopped by the 4-hour cap | 0 of 5 | 2 of 5 |
 
 Recon minus flat, with 95% intervals that resample both rows and runs: −1.2 points [−3.7, 0.0] for grouped rows that belong on the list, +2.0 [+0.5, +3.9] for matchable rows left on it, and −3.6 [−12.5, +8.9] for rows that really need the expert.
 
@@ -97,10 +97,6 @@ On the reviewed rows, recon runs made 20 hand rulings, and 11 matched the refere
 | One model, gpt-6.1-sol at max thinking, and one month of each data set | Weaker models or other months may differ |
 | Five runs per arm | Small effects would not show. The bank rec was at the ceiling for matching, so it can't separate the arms |
 | One sentence of instruction | Shows a strong agent merely pointed at the repo, not a brief written around recon |
-
-## Without the prose
-
-TODO(main agent): trim arm results
 
 ## Method
 
