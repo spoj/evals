@@ -1,8 +1,9 @@
-# posts-evals
+# evals
 
-Measurements of [posts](https://github.com/spoj/posts) in real use. Each dated folder is one measurement, written as a post. The archives measured are private, so posts here carry aggregate numbers only.
+Measurements of two patterns for agent work in real use: [posts](https://github.com/spoj/posts), a format for an agent's work archive, and [recon](https://github.com/spoj/recon), a pattern for reconciliations. Each dated folder is one measurement, written as a post. The data measured is private, so posts here carry aggregate numbers only. The repo was renamed from posts-evals.
 
 | Post | Headline |
 |---|---|
 | [Posts in use: one private work archive](2026-10-04-one-work-archive/README.md) | Agents found 87% of the earlier posts their task needed, in an archive of 236 posts. |
 | [Garbage in, garbage out? Fact recall in a minimally organized archive](2026-10-04-fact-recall/README.md) | With a dated folder and a README per post, no index and no purging, an agent found 99% of single facts and 97% of a 144-question set; archive lookups took 7.8% of what 193 real sessions spent. |
+| [Does a reconciliation pattern help a strong agent? Not in one shot](2026-10-04-recon-benchmarks/README.md) | Pointed at spoj/recon, gpt-6.1-sol matched no better in two real reconciliations: runs from different arms agreed on 82% of 16,933 intercompany rows, as often as runs from the same arm, and recon cost more time and tokens. |
