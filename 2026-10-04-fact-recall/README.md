@@ -13,7 +13,7 @@ The measurements come from the private work archive of [Posts in use](../2026-10
 | Hard set: terse questions, and questions needing two posts | 37 of 40 (92%) |
 | Facts a later post changed, with nothing purged | the latest value 19 of 20 times |
 | Questions the archive can't answer | "not found" 14 of 15 times; the 15th turned out to be answered in the archive |
-| Per benchmark question | 7.4 tool calls, 32 s median, $0.068 at list prices |
+| Per benchmark question | mean 7.4 tool calls, median 32 s, mean $0.068 at list prices |
 | Per lookup in real sessions | 2 tool calls, 16 s, $0.08 (medians) |
 | Lookups per session | median 4, mean 8.7 |
 | Lookups' share of spend | 7.8% overall; 11.6% in the median session |
@@ -32,7 +32,7 @@ The same questions also went through retrieval-augmented generation (RAG) over a
 | Single facts in text (101) | 99% | 99% | 97% / 90% / 90% |
 | Main set (144) | 97% | 92% | 92% / 87% / 87% |
 | Hard set (40) | 92% | 95% | 80% / 80% / 72% |
-| Per question: tool calls, median time, cost | 7.4, 32 s, $0.068 | 4.0, 20 s, $0.045 | 1, 8–9 s, $0.020–0.021 |
+| Per question: mean tool calls, median time, mean cost | 7.4, 32 s, $0.068 | 4.0, 20 s, $0.045 | 1, 8–9 s, $0.020–0.021 |
 | Upkeep | none | an index of 4,102 text files: about 3 minutes and $1.78 per full build, kept current as the archive changes | the same |
 
 With the index, agentic RAG took about a third less time and cost per question than the agent. It bought no measurable accuracy on facts both could see: 99% each on single facts, and on the hard set 95% against 92%, a single question (p = 1.0). It can't see facts that live only in data files, 8 of the main set, because a text index doesn't hold them. Single-shot RAG is cheaper again, but less accurate.
@@ -54,7 +54,7 @@ That trade pays only where cost and latency are tight. In these sessions, lookup
 | Lookup time | 1.3 min | 4.0 min | 10.7 min |
 | Lookup share of elapsed time | 4.0% | 8.7% | 26.1% |
 
-165 of the 193 sessions looked something up. A session's lookup is shorter than a benchmark question, a median 2 calls against 7.4, as the agent often knows which post to open. Each call costs about four times as much, though, because it carries the session's context.
+165 of the 193 sessions looked something up. A session's lookup is shorter than a benchmark question, a median 2 calls against 6.5, as the agent often knows which post to open. Each call costs about four times as much, though, because it carries the session's context.
 
 ## Superseded facts: the weak spot, and its cheap fix
 
