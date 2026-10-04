@@ -104,7 +104,7 @@ On the four kinds of row where flat and recon parted, code only grouped the old 
 
 **Coarseness.** Code only lumped more: 74.6% of its grouped rows were in exactly the reference group, against 81.4% for flat and 80.3% for recon, though 98.0% were defensible. Most of that is one run, code-3: 63% exact, in 4,402 groups where the others made about 5,400. It was also the least like any other run, agreeing with each on 59–68% of rows. Two code-only runs agreed on 73% of rows on average, or 75–83% without code-3, against 81% within flat and 82% within recon.
 
-**Caveats.** Code only ran later and five at a time; its writing speed was checked and is no faster. It was scored on the same 100 rows, drawn from the first ten runs' disagreements. The reviewers never saw its groups, so an equally right group that no earlier run proposed counts as wrong.
+**Caveats.** Code only was scored on the same 100 rows, drawn from the first ten runs' disagreements. The reviewers never saw its groups, so an equally right group that no earlier run proposed counts as wrong.
 
 ## How far to trust the reference
 
