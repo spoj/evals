@@ -77,6 +77,8 @@ Most tokens are cached input: 5.2 billion cache-read tokens against 27 million o
 
 ## Retrieval in detail
 
+A follow-up measures whether agents then find the fact itself, including the latest value of a changed fact when asked for it: [Garbage in, garbage out? Fact recall in a minimally organized archive](../2026-10-04-fact-recall/README.md).
+
 | Axis | Result | Basis |
 |---|---|---|
 | Need recognition | 30 of the 34 sessions with a clearly needed earlier post opened at least one | 40 sessions |
