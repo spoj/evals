@@ -4,7 +4,7 @@
 
 On 3–4 October 2026, gpt-6.1-sol at max thinking did two real reconciliations in the Pi coding agent, five runs per arm. Arm *flat* got the task's brief alone. Arm *recon* got the same brief plus one sentence: "Use the idea in github:spoj/recon."
 
-**Both arms matched a 136-line bank rec perfectly, and both failed the same judgment call in every run. On 16,933 intercompany items, two runs from different arms agreed on 82% of rows, as often as two runs from the same arm (81–82%). Recon cost more: about 40% more tokens on the bank rec, and nearly twice the median time on the intercompany match, where two of its five runs hit the 4-hour cap.**
+**Both arms matched a 136-line bank rec perfectly, and both failed the same judgment call in every run. On 16,933 intercompany items, at most 2% of the rows either arm grouped belonged on the expert's list, and 83–87% of the rows the arms left for the expert really needed one. Recon cost more: about 40% more tokens on the bank rec, and nearly twice the median time on the intercompany match, where two of its five runs hit the 4-hour cap.**
 
 | | flat | recon | recon, code only |
 |---|--:|--:|--:|
@@ -24,7 +24,7 @@ Recon minus flat, with 95% intervals that resample both rows and runs: −1.2 po
 
 ## What recon is
 
-[spoj/recon](https://github.com/spoj/recon) treats a reconciliation as a partition: matching rules compose into a strategy that puts every entry in exactly one group or in a residual left for review. Decisions about the residual, by a model or a person, are written as data, one override per decision keyed by row id with a reason, so that they are re-applied on every later run.
+[spoj/recon](https://github.com/spoj/recon/tree/7e7b364), as these runs saw it, treats a reconciliation as a partition: matching rules compose into a strategy that puts every entry in exactly one group or in a residual left for review. Decisions about the residual, by a model or a person, are written as data, one override per decision keyed by row id with a reason, so that they are re-applied on every later run.
 
 ## The bank rec
 
@@ -75,9 +75,9 @@ The recon run that missed the cross-currency rows made no cross-currency groups 
 
 *Runs stopped at the cap kept their last saved result.*
 
-Both arms wrote the same thing: a waterfall of matching passes, each working on what the earlier ones left, in 1,300–2,000 lines of code per run. Recon changed what came after. Four of five recon runs went on to rule on leftover rows one at a time, 49 to 197 rulings each, recorded as recon's row-id overrides. Two were still ruling when the cap stopped them.
+Both arms wrote the same thing: a waterfall of matching passes, each working on what the earlier ones left, typing 1,300–2,000 lines of code per run, rewrites included. Recon changed what came after. Four of five recon runs went on to rule on leftover rows one at a time, 49 to 197 rulings each, recorded as recon's row-id overrides. Two were still ruling when the cap stopped them.
 
-Hand rulings covered 20 reviewed rows and matched the reference on 11; flat's runs got 40 of 100 verdicts right on the same hard rows. Too few to judge.
+On the reviewed rows, recon runs made 20 hand rulings, and 11 matched the reference. On the same rows, flat's runs got 40 of their 100 verdicts right. These are hard rows, and 20 rulings are too few to judge.
 
 ## How far to trust the reference
 
